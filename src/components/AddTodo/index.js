@@ -13,15 +13,25 @@ const AddTodo = ({ addTodo }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** input 復原 */
+  const initialInput = () => {
+    const input = inputRef.current;
+    input.value = '';
+    input.focus();
+  };
+
   const submitTodo = evt => {
     evt.preventDefault(); // 避免預設 submit 事件造成頁面重整
 
     const input = inputRef.current;
-    addTodo(input.value);
+    const inputValue = input.value.trim();
+    if (inputValue === '') {
+      initialInput();
+      return;
+    }
 
-    // input 復原
-    input.value = '';
-    input.focus();
+    addTodo(inputValue);
+    initialInput();
   };
 
   return (
@@ -33,10 +43,7 @@ const AddTodo = ({ addTodo }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addTodo: todoMessage => {
-    if (todoMessage === '') return; // Validate message
-    dispatch(addTodo(todoMessage));
-  },
+  addTodo: todoMessage => dispatch(addTodo(todoMessage)),
 });
 
 export default connect(null, mapDispatchToProps)(AddTodo);
