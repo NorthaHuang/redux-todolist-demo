@@ -5,6 +5,7 @@ import {
   VisibleFilterOptions,
 } from '../actions/actionTypes';
 
+/** Initial State */
 const initialState = {
   visibleFilter: VisibleFilterOptions.SHOW_ALL,
   todos: [
@@ -36,6 +37,7 @@ const initialState = {
   ],
 };
 
+/** Root Reducer */
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:

@@ -10,6 +10,7 @@ const TodoList = ({ visibleFilter, todos, toggleTodo }) => {
     <StyledWrapper>
       {todos
         .filter(todo => {
+          /** Visible 處理 */
           switch (visibleFilter) {
             case VisibleFilterOptions.COMPLETED:
               return todo.isCompleted;
