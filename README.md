@@ -4,7 +4,7 @@
 
 Alpha Version:
 
-最基本的 Redux syntax 大致了解，但還缺乏 reducer 拆分技巧來增加可維護性，以及 ownProps 使用經驗。
+最基本的 Redux syntax 大致了解，但還缺乏 ~~reducer 拆分技巧來增加可維護性，以及~~ ownProps 使用經驗。
 
 ---
 

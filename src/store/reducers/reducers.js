@@ -16,7 +16,30 @@ export const visibleFilter = (state = VisibleFilterOptions.SHOW_ALL, action) => 
 };
 
 /** todos */
-export const todos = (state = [], action) => {
+const initialTodos = [
+  {
+    id: 1,
+    todoMessage: 'Learn Javascript.',
+    isCompleted: true,
+  },
+  {
+    id: 2,
+    todoMessage: 'Learn React.',
+    isCompleted: true,
+  },
+  {
+    id: 3,
+    todoMessage: 'Learn Redux.',
+    isCompleted: false,
+  },
+  {
+    id: 3,
+    todoMessage: 'Learn Redux-Saga.',
+    isCompleted: false,
+  },
+];
+
+export const todos = (state = initialTodos, action) => {
   switch (action.type) {
     case ADD_TODO:
       return [
