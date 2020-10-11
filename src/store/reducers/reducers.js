@@ -33,7 +33,7 @@ const initialTodos = [
     isCompleted: false,
   },
   {
-    id: 3,
+    id: 4,
     todoMessage: 'Learn Redux-Saga.',
     isCompleted: false,
   },
